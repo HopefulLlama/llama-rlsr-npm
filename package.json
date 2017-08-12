@@ -1,6 +1,6 @@
 {
   "name": "llama-rlsr-npm",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "npm module for llama-rlsr",
   "main": "src/llama-rlsr-npm.js",
   "scripts": {
