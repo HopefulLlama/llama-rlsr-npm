@@ -6,7 +6,7 @@ const DEFAULT = {
   path: './package.json'
 };
 
-function update(versionMetadata, config) {
+function update(versionMetadata, config, done) {
   config = merge.recursive(true, DEFAULT, config);
 
   let fileContents = fs.readFileSync(config.path, {encoding: 'utf-8'});
@@ -16,6 +16,7 @@ function update(versionMetadata, config) {
   fileContents = fileContents.replace(versionRegex, replacement);
 
   fs.writeFileSync(config.path, fileContents);
+  done();
 }
 
 module.exports = {

@@ -2,8 +2,8 @@ const VersionUpdater = require('./VersionUpdater');
 
 function wrapFunction(func) {
   return (config) => {
-    return (newVersion) => {
-      return func(newVersion, config);
+    return (newVersion, done) => {
+      return func(newVersion, config, done);
     };
   };
 }

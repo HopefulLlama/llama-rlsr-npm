@@ -8,11 +8,13 @@ const VERSION_METADATA = {
   newVersion: '0.0.2'
 };
 
+const MOCK_DONE = jasmine.createSpy('done');
+
 describe('VersionUpdater', () => {
   let fileContents;
 
   function assert(config, filePath, contains) {
-    VersionUpdater.update(VERSION_METADATA, config);
+    VersionUpdater.update(VERSION_METADATA, config, MOCK_DONE);
 
     expect(fs.readFileSync).toHaveBeenCalledWith(filePath, {encoding: 'utf-8'});
     expect(fs.writeFileSync).toHaveBeenCalledWith(filePath, fileContents);
@@ -20,6 +22,8 @@ describe('VersionUpdater', () => {
     contains.forEach((testee) => {
       expect(fileContents).toContain(testee);
     });
+
+    expect(MOCK_DONE).toHaveBeenCalled();
   }
 
   beforeEach(() => {

@@ -32,7 +32,7 @@
     "gulp-jshint": "^2.0.4",
     "gulp-sequence": "^0.4.6",
     "jshint": "^2.9.5",
-    "llama-rlsr": "0.0.3",
-    "llama-rlsr-keep-a-changelog": "0.0.3"
+    "llama-rlsr": "0.0.4",
+    "llama-rlsr-keep-a-changelog": "0.0.4"
   }
 }
