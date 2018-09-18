@@ -12,7 +12,7 @@ module.exports = [
     },
     latest: 'HEAD',
     tag: {
-    	prefix: 'v'
+      prefix: 'v'
     }
   })
 ];
